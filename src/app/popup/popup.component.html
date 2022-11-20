@@ -1,0 +1,18 @@
+  <div class="dialog" *ngIf="isShow">
+    <div class="popup">
+      <div class="popup__header">
+        <div class="popup__title">Thông báo</div>
+        <div class="popup__close">
+          <i style="font-size: 16px; opacity: 0.4" class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="popup__subtitle">{{contentAlert}}</div>
+      <div class="popup__footer">
+        <app-button (click)="HandleClickClose()"
+        contentButton="Đóng"
+        typeButton="button__primary--red"
+         ></app-button>
+      </div>
+    </div>
+  </div>
+

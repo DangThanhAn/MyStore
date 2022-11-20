@@ -1,0 +1,62 @@
+<div class="banner">
+  <img class="banner--dashbroad" src="https://media.coolmate.me/cdn-cgi/image/width=1920,quality=90,format=auto/uploads/November2022/black-panther-hero-banner-des.jpg">
+<div class="banner--policy">
+  <div class="banner--policy--wrapper">
+    <div class="banner--policy__item">
+      Miễn phí vận chuyển cho
+      <br>
+      đơn hàng trên 200k
+    </div>
+    <div class="banner--policy__item">
+      60 ngày đổi trả vì
+      <br>
+      bất cứ lí do gì
+    </div>
+    <div class="banner--policy__item">
+      Đến tận nơi nhận hàng trả
+      <br>
+      hoàn tiền trong 24h
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <h2 class="container--title"> Mặc ngay, Yêu luôn</h2>
+  <!-- TAB INDEX -->
+  <div class="home--tap">
+    <div class="home--tap--header">
+      <a class="home--tap__item" style="text-align: left;" [ngClass]="{'is-active' : isActive}" (click)="changeTab(1)">Black Panther</a>
+      <a class="home--tap__item" [ngClass]="{'is-active' : isActive2}" (click)="changeTab(2)">Đồ thu đông</a>
+      <a class="home--tap__item" style="text-align: right;" [ngClass]="{'is-active' : isActive3}" (click)="changeTab(3)">Quần lót nam</a>
+    </div>
+    <!-- End Tab Index -->
+    <div [ngSwitch]="tabIndex">
+      <template *ngSwitchCase="1"></template>
+      <template *ngSwitchCase="2"></template>
+      <template *ngSwitchCase="3"></template>
+       <!-- CONTENT PAGE 1  -->
+      <ng-container *ngSwitchCase="1">
+        <div class="home--tap--wrapper">
+          <span class="previous"></span>
+          <span class="next"></span>
+          <app-product [products]="productsWakanda"></app-product>
+        </div>
+      </ng-container>
+       <!-- CONTENT PAGE 2 -->
+       <ng-container *ngSwitchCase="2">
+        <div class="home--tap--wrapper">
+          <span class="previous"></span>
+        <span class="next"></span>
+        <app-product [products]="productsWinter" [bgColor]="'white'" [color]="'black'" [bgColorSale]="'white'" [ColorSale]="'#2f5acf'"></app-product>
+        </div>
+      </ng-container>
+       <!-- CONTENT PAGE 3 -->
+       <ng-container *ngSwitchCase="3">
+        <p>Nội dung trang 3</p>
+      </ng-container>
+    </div>
+    <!-- End ngSwitch -->
+  </div>
+  <!-- End home Tab -->
+</div>
+<!-- End container -->
