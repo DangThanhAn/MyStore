@@ -1,7 +1,7 @@
 import { ProductService } from './../product.service';
 import { Product,products} from './../product';
 import { Component, OnInit  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   product :Product|any;
   items:Product | any;
-  constructor(private route: ActivatedRoute,private products:ProductService)  {
+  constructor(private route: ActivatedRoute,private products:ProductService,private router: Router)  {
     this.items = this.products.getProductsWakanda(); // danh sách tìm kiếm của mình
     if(this.isChecked) this.colorConvert="Đen"; // default là mãu đen
 
@@ -35,8 +35,10 @@ export class ProductDetailsComponent implements OnInit {
   isCurrent1:boolean |any // ảnh nhỏ
   imgCurrent:string|any;
   //
+  isShowToast:boolean = false;
   setSize(event:any){
     this.size = event.target.value.toUpperCase();
+    this.result = true;
   }
   // Khi click vào thì thực hiện
   // 1. binđing class qua thuộc tính isCheck
@@ -53,11 +55,29 @@ export class ProductDetailsComponent implements OnInit {
     }
     if(this.isChecked) this.colorConvert="Đen";
     if(this.isChecked1) this.colorConvert="Tím";
-    // Đổi img banner
   }
+  // Nếu chưa chọn size thì show toast message
+  result:boolean|any;
   checkChooseSize(){
-    if(this.size =="" || this.size ==null){
-      alert("Hi");
-    }
+    this.result =(this.size =="" || this.size ==null) ? this.isShowToast = true : this.isShowToast = false
+  }
+  // Trả về false thuộc tính isShowToast
+  returnDefaultValue(){
+    this.isShowToast=false;
+  }
+  // Có lỗi thì show toast
+  showError(){
+    this.isShowToast = true;
+  }
+  goCart(){
+    this.router.navigate(['/','cart']);
+  }
+  // Tăng giảm số lượng sản phẩm
+  count:number=1;
+  countSub(){
+    this.count--;
+  }
+  countAdd(){
+    this.count++;
   }
 }
