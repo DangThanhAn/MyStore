@@ -1,0 +1,9 @@
+<div id="toast" (click)="this.setDefault.emit()">
+  <div class="toast-message">
+      <div class="toast-message-left toast-message__icon--success">
+          <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <div class="toast-message-mid" [ngStyle]="{'color':type}">{{textMessage}}</div>
+      <div class="toast-message-right toast-message__icon--success"><i class="fas fa-times"></i></div>
+  </div>
+</div>

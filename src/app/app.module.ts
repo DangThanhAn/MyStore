@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { NoComponent } from './no/no.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ToastMessageComponent } from './toast-message/toast-message.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CartComponent,
     FooterComponent,
     NoComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ToastMessageComponent
   ],
   imports: [
     BrowserModule,
