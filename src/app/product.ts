@@ -35,7 +35,7 @@ export const products = [
     productID: 1,
     name: 'Áo thun Marvel Oversize Graffiti Warrior King',
     price: 259000,
-    color:"Đen trắng",
+    color:"Tím",
     size: "L",
     imgUrl:"https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/November2022/ao-thun-black-panther-warriorking1_61.jpg",
     sale:"Mua 2 được giảm thêm 10%",

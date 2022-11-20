@@ -8,21 +8,38 @@
     </div>
     <!-- Thông tin chi tiết -->
     <div class="product--single__wrapper" *ngIf="product">
-      <div class="product--single__images">
+      <div class="product--single__images" *ngIf="isChecked">
+        <div class="product--img">
+          <img src="{{this.imgCurrent || product.imgUrl}}" alt="Ảnh">
+        </div>
+        <div class="product--option">
+          <div class="product--option__item" [ngClass]="{'is-current': isCurrent}"
+            (click)="this.imgCurrent=this.product?.imgUrl.toString(); isCurrent = true;isCurrent1 = false">
+            <img src="{{product.imgUrl}}" alt="Ảnh">
+          </div>
+          <div class="product--option__item" [ngClass]="{'is-current': isCurrent1}"
+            (click)="this.imgCurrent=this.product?.imgHover.toString();isCurrent = false;isCurrent1 = true">
+            <img src="{{product.imgHover}}" alt="Áo thun Marvel">
+          </div>
+        </div>
+        <span class="previous"></span>
+        <span class="next"></span>
+      </div>
+      <div class="product--single__images" *ngIf="isChecked1">
         <div class="product--img">
           <img
-            src="{{product.imgUrl}}"
+            src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-black-panther-warrior-king222.jpg"
             alt="Ảnh">
         </div>
         <div class="product--option">
           <div class="product--option__item is-current">
             <img
-              src="{{product.imgUrl}}"
+              src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-black-panther-warrior-king222.jpg"
               alt="Ảnh">
           </div>
           <div class="product--option__item ">
             <img
-              src="{{product.imgHover}}"
+              src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-Marvel-Oversize-Graffiti-Warrior-King-1_22_50.jpg"
               alt="Áo thun Marvel">
           </div>
         </div>
@@ -40,22 +57,22 @@
               <div class="option--select">
                 <label class="option--select__item">
                   <input type="radio" name="color" value="den" (click)="setColor($event)" checked="isChecked">
-                <span class="checkmark " [ngClass]="{'is-active': isChecked}"
-                  style="margin-right:16px;background-image: url('https://media.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/November2022/mau-den-black-panther_42.jpg')">
-                </span>
+                  <span class="checkmark " [ngClass]="{'is-active': isChecked}"
+                    style="margin-right:16px;background-image: url('https://media.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/November2022/mau-den-black-panther_42.jpg')">
+                  </span>
                 </label>
                 <label class="option--select__item">
                   <input type="radio" name="color" value="tim" (click)="setColor($event)" checked="isChecked1">
-                <span class="checkmark" [ngClass]="{'is-active': isChecked1}"
-                  style="background-image: url('https://media.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/November2022/mau-tim-1-new_97.jpg')">
-                </span>
+                  <span class="checkmark" [ngClass]="{'is-active': isChecked1}"
+                    style="background-image: url('https://media.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/November2022/mau-tim-1-new_97.jpg')">
+                  </span>
                 </label>
               </div>
               <div class="option--heading">
                 <span>Kích thước:
                   <span type="text" style="font-weight: bold;">{{size}}</span>
                 </span>
-                <span style="color: #2f5acf;">Hướng dẫn chọn size</span>
+                <span style="color: #2f5acf;" (click)="checkChooseSize()">Hướng dẫn chọn size</span>
               </div>
               <div class="choose--size">
                 <label class="choose--size__item">
@@ -79,7 +96,7 @@
               <input type="number" value="1" max="99" min="1" class="quantity__control">
               <a href="#" class="quantity__augure">+</a>
             </div>
-            <div class="product-single__button">
+            <div class="product-single__button" >
               <a href="#" class="btn">Chọn kích thước </a>
             </div>
           </div>
@@ -161,9 +178,14 @@
       <div class="dct--header">Chi tiết sản phẩm</div>
       <div class="dct--title">{{product.name}}</div>
       <div class="info--box">
-        Được truyền cảm hứng từ hình ảnh vị vua T'Challa kết hợp với phong cách đường phố graffiti bắt nguồn từ những góc phố của người da màu. Nhà vua T'Challa - vị lãnh đạo của vương quốc Wakanda được phác họa với hình ảnh tự do cùng dòng chữ "WARRIOR KING" thể hiện sự mạnh mẽ, tinh thần chiến đấu mãnh liệt của một chiến binh trước những thù địch đe dọa lên vương quốc của mình.
+        Được truyền cảm hứng từ hình ảnh vị vua T'Challa kết hợp với phong cách đường phố graffiti bắt nguồn từ những
+        góc phố của người da màu. Nhà vua T'Challa - vị lãnh đạo của vương quốc Wakanda được phác họa với hình ảnh tự do
+        cùng dòng chữ "WARRIOR KING" thể hiện sự mạnh mẽ, tinh thần chiến đấu mãnh liệt của một chiến binh trước những
+        thù địch đe dọa lên vương quốc của mình.
       </div>
-      <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://mcdn.coolmate.me/image/October2022/anh-thiet-ke-ao-in-Graffiti-Warrior-King-den-2_30.jpg" alt="" width="550"></p>
+      <p><img style="display: block; margin-left: auto; margin-right: auto;"
+          src="https://mcdn.coolmate.me/image/October2022/anh-thiet-ke-ao-in-Graffiti-Warrior-King-den-2_30.jpg" alt=""
+          width="550"></p>
     </div>
     <!-- End -->
   </div>

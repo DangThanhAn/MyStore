@@ -9,11 +9,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product :Product|undefined;
+  product :Product|any;
   items:Product | any;
   constructor(private route: ActivatedRoute,private products:ProductService)  {
     this.items = this.products.getProductsWakanda(); // danh sách tìm kiếm của mình
     if(this.isChecked) this.colorConvert="Đen"; // default là mãu đen
+
    }
 
   ngOnInit() {
@@ -29,9 +30,17 @@ export class ProductDetailsComponent implements OnInit {
   colorConvert:string|undefined;
   isChecked:boolean=true;
   isChecked1:boolean=false;
+  //
+  isCurrent:boolean = true // ảnh nhỏ
+  isCurrent1:boolean |any // ảnh nhỏ
+  imgCurrent:string|any;
+  //
   setSize(event:any){
     this.size = event.target.value.toUpperCase();
   }
+  // Khi click vào thì thực hiện
+  // 1. binđing class qua thuộc tính isCheck
+  // 2. Đổi img banner
   setColor(event:any){
     this.color = event.target.value;
     if(this.color == 'den'){
@@ -44,5 +53,11 @@ export class ProductDetailsComponent implements OnInit {
     }
     if(this.isChecked) this.colorConvert="Đen";
     if(this.isChecked1) this.colorConvert="Tím";
+    // Đổi img banner
+  }
+  checkChooseSize(){
+    if(this.size =="" || this.size ==null){
+      alert("Hi");
+    }
   }
 }
