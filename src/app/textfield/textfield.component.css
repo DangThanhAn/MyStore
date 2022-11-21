@@ -1,0 +1,29 @@
+.input{
+  color: #231F20;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 16px;
+  height: 40px;
+  width: 100%;
+  padding: 5px 20px;
+  transition: all .2s;
+}
+.grid--column{
+  position: relative;
+    box-sizing: border-box;
+    min-height: 1px;
+    vertical-align: top;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding: 9px;
+    width: 100%;
+}
+.input:focus{
+  outline: 0;
+  border: 1px solid #2f5acf;
+}
+.input:active{
+  border: 1px solid #2f5acf;
+}
+
