@@ -45,7 +45,6 @@
   border-radius: 20px;
   object-fit: cover;
   box-sizing: border-box;
-  display: block;
 }
 .product__img:hover .img--hover{
  display: inline-block;

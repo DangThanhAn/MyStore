@@ -16,7 +16,7 @@
     vertical-align: top;
     margin-left: 0!important;
     margin-right: 0!important;
-    padding: 9px;
+    /* padding: 9px; */
     width: 100%;
 }
 .input:focus{

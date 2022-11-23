@@ -99,9 +99,9 @@
               <a style="cursor: pointer;" class="quantity__augure" (click)="countAdd()">+</a>
             </div>
             <div class="product-single__button" >
-              <a class="btn">
+              <a class="btnCustom">
                 <p *ngIf="!result" (click)="showError()">Chọn kích thước</p>
-                <p *ngIf="result"  (click)="goCart()">Thêm vào giỏ hàng</p>
+                <p *ngIf="result"  (click)="addToCart(product)">Thêm vào giỏ hàng</p>
               </a>
             </div>
           </div>

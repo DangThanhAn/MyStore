@@ -252,7 +252,7 @@
   flex: 1;
   padding-left: 14px;
 }
-.product-single__button .btn {
+.product-single__button .btnCustom {
   position: relative;
   width: 100%;
   transition: all .3s;
@@ -261,7 +261,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.btn{
+.btnCustom{
   display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -275,15 +275,15 @@
     cursor: pointer;
     text-decoration: none;
 }
-.btn:hover {
+.btnCustom:hover {
   color: #000;
   background-color: #d9d9d9;
   border: 2px solid #d9d9d9;
 }
-.product-single__button .btn:hover::before {
+.product-single__button .btnCustom:hover::before {
   background-image: url('https://www.coolmate.me/images/icon-cart-black.svg?6fbcb8bf4d8a93582708beec0034b687');
 }
-.product-single__button .btn::before {
+.product-single__button .btnCustom::before {
   content: "";
   display: inline-block;
   width: 18px;
@@ -293,6 +293,9 @@
   background-repeat: no-repeat;
   background-position: 50%;
   margin-right: 7px;
+}
+.product-single__button .btnCustom p{
+  margin: 0;
 }
 .product--single__addToCart{
   padding-bottom: 35px;
