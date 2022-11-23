@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { FormControl,FormGroup } from '@angular/forms';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-textfield',
@@ -10,10 +12,7 @@ export class TextfieldComponent implements OnInit {
   constructor() { }
   @Input() widthExp : string | undefined;
   @Input() contentPlacehoder : string | any;
-
-  // @Input() width : string | undefined;
   ngOnInit(): void {
 
   }
-
 }

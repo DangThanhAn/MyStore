@@ -1,3 +1,4 @@
+import { CartService } from './../cart.service';
 import { ProductService } from './../product.service';
 import { Product,products} from './../product';
 import { Component, OnInit  } from '@angular/core';
@@ -11,7 +12,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   product :Product|any;
   items:Product | any;
-  constructor(private route: ActivatedRoute,private products:ProductService,private router: Router)  {
+  constructor(
+    private route: ActivatedRoute,
+    private products:ProductService,
+    private router: Router,
+    private cartService: CartService
+    )  {
     this.items = this.products.getProductsWakanda(); // danh sách tìm kiếm của mình
     if(this.isChecked) this.colorConvert="Đen"; // default là mãu đen
 
@@ -69,9 +75,7 @@ export class ProductDetailsComponent implements OnInit {
   showError(){
     this.isShowToast = true;
   }
-  goCart(){
-    this.router.navigate(['/','cart']);
-  }
+
   // Tăng giảm số lượng sản phẩm
   count:number=1;
   countSub(){
@@ -79,5 +83,11 @@ export class ProductDetailsComponent implements OnInit {
   }
   countAdd(){
     this.count++;
+  }
+  // Add cart
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    this.router.navigate(['/','cart']);
+    window.alert('Your product has been added to the cart!');
   }
 }
