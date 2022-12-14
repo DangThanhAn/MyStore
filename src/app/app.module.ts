@@ -1,3 +1,5 @@
+import { MoneyVndPipe } from './pipe/money-vnd.pipe';
+import { MatButton } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NoComponent } from './no/no.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ToastMessageComponent } from './toast-message/toast-message.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,13 +37,16 @@ import { ToastMessageComponent } from './toast-message/toast-message.component';
     FooterComponent,
     NoComponent,
     ProductDetailsComponent,
-    ToastMessageComponent
+    ToastMessageComponent,
+    MoneyVndPipe
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

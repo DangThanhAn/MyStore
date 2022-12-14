@@ -39,7 +39,15 @@ a{
 .header--menu{
   height: 100%;
   flex: 1;
+  cursor: pointer;
 }
+.header--menu::after{
+  content: " - Remember this";
+  /* background-color: yellow;
+  color: red;
+  font-weight: bold; */
+}
+
 .header--menu ul{
   display: flex;
   text-decoration: none;
@@ -60,3 +68,12 @@ a{
   width: 100px;
   height: 20px;
 }
+/* .product--list{
+
+}
+.product--list__title{
+
+}
+.product--list__item{
+
+} */

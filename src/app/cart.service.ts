@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+
 import { Product } from './product';
 import { Injectable } from '@angular/core';
 
@@ -6,13 +8,15 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
   items: Product[] = [];
-  constructor() { }
+  constructor(
+    private http : HttpClient
+  ) { }
   addToCart(product: Product) {
     this.items.push(product);
   }
-
+  url : string = "http://localhost:3000/cart";
   getItems() {
-    return this.items;
+    return this.http.get<any>(this.url);
   }
 
   clearCart() {

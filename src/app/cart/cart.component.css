@@ -116,6 +116,10 @@ form{
     display: flex;
     flex-flow: row wrap;
     padding: 0;
+    height: auto;
+}
+.cart--item__name{
+  max-width: 85%;
 }
 .cart--item__remove{
   cursor: pointer;
@@ -151,13 +155,21 @@ form{
     transition: all .2s;
 }
 .cart--item__details{
+  box-sizing: border-box;
+  display: flex;
   margin-left: 1.5rem;
   flex: 3;
   height: 100%;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+.cart--item__info{
+  width: 100%;
 }
 .cart--item__action{
-  width: 100%;
-  margin-top: 82px;
+  position: absolute;
+  bottom: 0;
+  width:-webkit-fill-available;
 }
 .choose--size__item{
 
@@ -187,8 +199,8 @@ form{
 }
 .option{
   position: absolute;
-  top: 129px;
-  left: 191px;
+  top:7px;
+  left: 40px;
   opacity: 0.7;
 }
 .size{
@@ -196,7 +208,8 @@ form{
   width: 40px;
 }
 .optsize{
-  left: 240px;
+  left: 90px;
+
 }
 .action--bottom{
   display: flex;

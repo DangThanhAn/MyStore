@@ -1,0 +1,162 @@
+{
+  "product": [
+    {
+      "productID": 1,
+      "productName": "Áo thun Marvel Oversize Graffiti Warrior King",
+      "color": ["Tím","Đen"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/wakanda-sp1-tim-hinh1.jpg",
+        "./src/assets/images/wakanda-sp1-tim-hinh2.jpg",
+        "./src/assets/images/wakanda-sp1-den-hinh3.jpg",
+        "./src/assets/images/wakanda-sp1-den-hinh4.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"wakanda"
+    },
+    {
+      "productID": 2,
+      "productName": "Áo thun Marvel Oversize Wakanda Forever - Panther Pride",
+      "color": ["Đen"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/wakanda-sp2-den-hinh1.jpg",
+        "./src/assets/images/wakanda-sp2-den-hinh2.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"wakanda"
+    },
+    {
+      "productID": 3,
+      "productName": "Áo thun Marvel Oversize Black Panther - Energy Pulse",
+      "color": ["Đen"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/wakanda-sp3-den-hinh1.jpg",
+        "./src/assets/images/wakanda-sp3-den-hinh2.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"wakanda"
+    },
+    {
+      "productID": 4,
+      "productName": "Áo thun Marvel Oversize Pride Wakanda",
+      "color": ["Tím","Đen"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/wakanda-sp4-den-hinh1.jpg",
+        "./src/assets/images/wakanda-sp4-den-hinh2.jpg",
+        "./src/assets/images/wakanda-sp4-tim-hinh3.jpg",
+        "./src/assets/images/wakanda-sp4-tim-hinh4.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"wakanda"
+    },
+    {
+      "productID": 5,
+      "productName": "Mũ len thêu logo Coolmate",
+      "color": ["Đen","Vàng"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/winter-sp5-den-hinh1.jpg",
+        "./src/assets/images/winter-sp5-den-hinh2.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"winter"
+    },
+    {
+      "productID": 6,
+      "productName": "Áo thun thể thao dài tay nam Recycle Active",
+      "color": ["Đen","Tím"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/winter-sp6-xam-hinh1.jpg",
+        "./src/assets/images/winter-sp6-xam-hinh1.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"winter"
+    },
+    {
+      "productID": 7,
+      "productName": "Áo Hoodie nam Daily Wear (mũ trùm có dây rút)",
+      "color": ["Đen","Tím"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/winter-sp7-den-hinh1.jpg",
+        "./src/assets/images/winter-sp7-den-hinh2.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"winter"
+    },
+    {
+      "productID": 8,
+      "productName": "Áo khoác nam có mũ Daily Wear - trượt nước, chống UV 99%",
+      "color": ["Đen","Tím"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/winter-sp8-trang-hinh1.jpg",
+        "./src/assets/images/winter-sp8-trang-hinh2.jpg"
+      ],
+      "quanlityAvailable":100,
+      "price":259000,
+      "decription":"",
+      "cataloryID":"winter"
+    }
+
+  ],
+  "catalory": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "cart": [
+    {
+      "productID": 8,
+      "productName": "Áo khoác nam có mũ Daily Wear - trượt nước, chống UV 99%",
+      "color": ["Đen","Tím"],
+      "size":["S","M","L","XL"],
+      "imgUrl":[
+        "./src/assets/images/winter-sp8-trang-hinh1.jpg",
+        "./src/assets/images/winter-sp8-trang-hinh2.jpg"
+      ],
+      "price":259000,
+      "decription":"",
+      "cataloryID":"winter",
+      "quality": 1,
+      "sizeCurrent":"L",
+      "colorCurrent": "Đen"
+  },
+  {
+    "productID": 8,
+    "productName": "Áo khoác nam có mũ Daily Wear - trượt nước, chống UV 99%",
+    "color": ["Đen","Tím"],
+    "size":["S","M","L","XL"],
+    "imgUrl":[
+      "./src/assets/images/winter-sp8-trang-hinh1.jpg",
+      "./src/assets/images/winter-sp8-trang-hinh2.jpg"
+    ],
+    "price":259000,
+    "decription":"",
+    "cataloryID":"winter",
+    "quality": 2,
+    "sizeCurrent":"L",
+    "colorCurrent": "Đen"
+}
+  ]
+}

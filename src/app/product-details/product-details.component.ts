@@ -70,6 +70,7 @@ export class ProductDetailsComponent implements OnInit {
   // Trả về false thuộc tính isShowToast
   returnDefaultValue(){
     this.isShowToast=false;
+    this.addSuccess = false;
   }
   // Có lỗi thì show toast
   showError(){
@@ -84,10 +85,12 @@ export class ProductDetailsComponent implements OnInit {
   countAdd(){
     this.count++;
   }
+  addSuccess: boolean = false;
   // Add cart
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    this.router.navigate(['/','cart']);
-    window.alert('Your product has been added to the cart!');
+    // this.router.navigate(['/','cart']);
+    this.addSuccess = true;
+    // window.alert('Your product has been added to the cart!');
   }
 }

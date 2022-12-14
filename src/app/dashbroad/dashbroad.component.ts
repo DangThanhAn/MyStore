@@ -1,5 +1,5 @@
 import { ProductService } from './../product.service';
-import { Product } from './../product';
+import { Product, products } from './../product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -19,7 +19,12 @@ export class DashbroadComponent implements OnInit {
   isActive2:Boolean = false;
   isActive3:Boolean = false;
 
+  // public leads: Product[]=[];
   ngOnInit(): void {
+    // this.productService.getLeads().subscribe((data)=>{
+    //   this.leads=data;
+    //   this.loading = false;
+    // })
   }
   changeTab(tabIndex:number){
     if(tabIndex == 2){

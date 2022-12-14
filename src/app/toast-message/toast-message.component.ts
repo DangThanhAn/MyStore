@@ -1,4 +1,7 @@
+import { Product } from './../product';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatButton } from '@angular/material';
+
 
 @Component({
   selector: 'app-toast-message',
@@ -11,11 +14,10 @@ export class ToastMessageComponent implements OnInit {
   @Input() textMessage:string|any;
   @Input() type:string|any;
   @Output() setDefault = new EventEmitter();
+  @Input() product : Product | any;
   ngOnInit(): void {
   }
-  ngOnChange(){
+  ngOnDestroy(){
     this.setDefault.emit();
   }
-
-
 }
