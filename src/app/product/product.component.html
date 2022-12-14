@@ -2,8 +2,8 @@
   <div class="grid__column" *ngFor="let product of products" [ngStyle]="{'color': color}">
     <div class="product" [ngStyle]="{'background-color': bgColor}">
       <div class="product__img" [routerLink]="['/product-details', product.productID]">
-          <img class="img--current" loading="lazy" src="{{product.imgUrl}}" alt="Áo thun Marvel Oversize Graffiti Warrior King">
-          <img class="img--hover" loading="lazy" src="{{product.imgHover}}" alt="Áo thun Marvel Oversize Graffiti Warrior King">
+          <img class="img--current" loading="lazy" src="{{product.imgUrl[0]}}" alt="Áo thun Marvel Oversize Graffiti Warrior King">
+          <img class="img--hover" loading="lazy" src="{{product.imgUrl[1]}}" alt="Áo thun Marvel Oversize Graffiti Warrior King">
           <div class="choose--size">
             <label class="choose--size__item">
               <input type="radio" name="size" value="m">
@@ -27,8 +27,8 @@
           <span class="checkmark " style="background-image: url('https://media.coolmate.me/cdn-cgi/image/width=160,height=160,quality=80,format=auto/uploads/November2022/mau-den-black-panther_42.jpg');"></span>
         </div>
       </div>
-      <h3 class="product--title" [routerLink]="['/product-details', product.productID]">{{product.name}}</h3>
-      <div class="product--price">{{product.price}}đ</div>
+      <h3 class="product--title" [routerLink]="['/product-details', product.productID]">{{product.productName}}</h3>
+      <div class="product--price">{{product.price | formatMoneyVnd }}</div>
       <div class="product--hint">
         <div [ngStyle]="{'background-color': bgColorSale,'color':ColorSale}">
           <span>{{product.sale}}</span>

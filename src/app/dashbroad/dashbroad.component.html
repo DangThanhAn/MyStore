@@ -52,11 +52,46 @@
       </ng-container>
        <!-- CONTENT PAGE 3 -->
        <ng-container *ngSwitchCase="3">
-        <p>Nội dung trang 3</p>
+        <div class="home--tap--wrapper">
+          <span class="previous"></span>
+        <span class="next"></span>
+        <app-product [products]="productsAccessory" [bgColor]="'white'" [color]="'black'" [bgColorSale]="'white'" [ColorSale]="'#2f5acf'"></app-product>
+        </div>
       </ng-container>
     </div>
     <!-- End ngSwitch -->
   </div>
   <!-- End home Tab -->
+
 </div>
 <!-- End container -->
+
+
+<div class="container--foryou">
+  <div class="about--card">
+    <div class="about--card__content">
+      <h2 class="about--card__heading">Dành cho chính bạn</h2>
+      <div class="about--card__description">
+        <p>
+          Người đàn ông tốt là người tự biết chăm sóc bản thân anh ấy. Vì đàn ông cũng có quyền được<br> nhận
+          quà, và nếu như bạn chưa có QUÀ, thì hãy tự tin tự sắm cho mình một hộp đồ Coolmate.
+          </p>
+      </div>
+      <div class="about--card__button">
+        <a href="/lp/coolgift-bo-suu-tap-yeu-thuong-va-gan-ket?itm_source=home" class="btn btn--white">
+          Tìm hiểu thêm
+          </a>
+      </div>
+    </div>
+    <div class="about--card__image">
+      <img src="https://mcdn.coolmate.me/image/December2022/_CMM6258-Recovered_(2).jpg" alt="Image" >
+    </div>
+  </div>
+</div>
+
+
+<div class="container--foryou">
+  <div class="home--collectionbanner">
+    <img src="https://mcdn.coolmate.me/image/December2022/mceclip0_32.jpg" alt="Image" width="100%" >
+  </div>
+</div>

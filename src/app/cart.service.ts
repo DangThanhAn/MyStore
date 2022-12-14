@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Product } from './product';
@@ -7,20 +8,27 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CartService {
-  items: Product[] = [];
   constructor(
     private http : HttpClient
   ) { }
-  addToCart(product: Product) {
-    this.items.push(product);
-  }
   url : string = "http://localhost:3000/cart";
-  getItems() {
+  public addToCart(product: Product):Observable<any>{
+    // console.log("đây là sản phẩm muốn thêm: ", product);
+    return this.http.post<any>(this.url,product);
+  }
+
+  public updateAProduct(product: Product , id: number):Observable<any>{
+    return this.http.put<any>(`${this.url}/`+id,product);
+  }
+  public deleteAProduct(id: number):Observable<any>{
+    return this.http.delete<any>(`${this.url}/`+id);
+  }
+
+  public getAllItemsInCart():Observable<any>{
     return this.http.get<any>(this.url);
   }
 
   clearCart() {
-    this.items = [];
-    return this.items;
+    return this.http.delete(this.url);
   }
 }
