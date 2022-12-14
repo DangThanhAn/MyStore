@@ -1,9 +1,25 @@
 <div id="toast" (click)="this.setDefault.emit()">
-  <div class="toast-message">
+  <div class="toast-message" [ngStyle]="{'color':type}">
       <div class="toast-message-left toast-message__icon--success">
           <i class="fas fa-exclamation-triangle"></i>
       </div>
       <div class="toast-message-mid" [ngStyle]="{'color':type}">{{textMessage}}</div>
       <div class="toast-message-right toast-message__icon--success"><i class="fas fa-times"></i></div>
+      <!-- Nội dung demo sản phẩm vừa được thêm vào giỏ hàng -->
+      <div class="div" *ngIf="product">
+        <div class="new--line"></div>
+        <div class="new--details">
+          <div class="new--details__img">
+            <img src="{{product.imgUrl}}">
+          </div>
+          <div class="new--details__title">{{product.name}}</div>
+          <div class="new--details__option">{{product.size}}</div>
+          <div class="new--details__price">{{product.price}}</div>
+        </div>
+        <div class="new--button">
+          <button mat-button>Xem giỏ hàng</button>
+        </div>
+      </div>
+      <!-- End  -->
   </div>
 </div>

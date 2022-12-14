@@ -77,26 +77,27 @@
     <div class="inf--oder">
       <div class="oder__title title">Giỏ hàng</div>
       <div class="cart--items">
-        <div class="cart--item" *ngFor="let item of items">
+        <div class="cart--item" *ngFor="let item of dataSource">
           <span class="cart--item__remove">✕</span>
           <div class="cart--item__img">
-            <img src="{{item.imgUrl}}" alt="Áo thun Marvel Oversize Black Panther - Outline">
+            <!-- <img src="{{item.imgUrl[1]}}" alt="Áo thun Marvel Oversize Black Panther - Outline"> -->
+            <img src="/src/assets/images/winter-sp8-trang-hinh2.jpg">
             <span class="cart--item__count">1</span>
           </div>
           <div class="cart--item__details">
             <div class="cart--item__info">
-              <div class="cart--item__name">{{item.name}}</div>
-              <div class="cart--item__option">Đen / M</div>
+              <div class="cart--item__name">{{item.productName}}</div>
+              <div class="cart--item__option">{{item.colorCurrent}} / {{item.sizeCurrent}}</div>
             </div>
             <div class="cart--item__action">
               <label class="choose--size__item ">
                 <input type="radio" name="size" value="m">
-                <span class="checkmark">Đen</span>
+                <span class="checkmark">{{item.colorCurrent}}</span>
               </label>
               <label class="option">v</label>
               <label class="choose--size__item size">
                 <input type="radio" name="" value="m">
-                <span class="checkmark">M</span>
+                <span class="checkmark">{{item.sizeCurrent}}</span>
               </label>
               <label class="option optsize">v</label>
               <div class="action--bottom">
@@ -105,7 +106,7 @@
                   <input type="number" value="1" max="99" min="1" class="quantity__control">
                   <a style="cursor: pointer;" class="quantity__augure">+</a>
                 </div>
-                <div class="action--price">{{item.price}}đ</div>
+                <div class="action--price">{{item.price | formatMoneyVnd}}</div>
               </div>
             </div>
           </div>
@@ -122,7 +123,7 @@
       <div class="pricing-info">
         <div class="pricing-info__item">
           <p>Tạm tính</p>
-          <p>349.000đ</p>
+          <p>{{this.totalCoin | formatMoneyVnd}} </p>
         </div>
         <div class="pricing-info__item">
           <p>Giảm giá</p>
@@ -135,14 +136,10 @@
         <div class="divider"></div>
         <div class="pricing-info__item">
           <p>Tổng</p>
-          <p style="font-size: 18px;">349.000đ</p>
+          <p style="font-size: 18px;">{{this.totalCoin | formatMoneyVnd}}</p>
         </div>
       </div>
 
     </div>
   </div>
-</div>
-
-<div *ngFor="let item of items">
-  <p>{{item.name}}</p>
 </div>

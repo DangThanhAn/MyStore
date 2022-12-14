@@ -202,3 +202,10 @@
 [textMessage]="'Vui lòng chọn biến thể'"
 (setDefault)="returnDefaultValue()"
 ></app-toast-message>
+<app-toast-message
+*ngIf="this.addSuccess"
+[type]="'black'"
+[textMessage]="'Đã thêm vào giỏ hàng'"
+(setDefault)="returnDefaultValue()"
+[product]="product"
+></app-toast-message>

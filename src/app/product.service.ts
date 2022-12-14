@@ -1,5 +1,6 @@
 import { Product } from './product';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,12 @@ import { Injectable } from '@angular/core';
 export class ProductService {
 
 
-  constructor() {
+  constructor(
+    // private httpClient: HttpClient
+  ) {
   }
+  dataUrl:string = "http://localhost:3000/";
+
   public getProductsWakanda(){
     let products: Product[];
     products = [
@@ -30,6 +35,7 @@ export class ProductService {
       "Mua 2 được giảm thêm 10%",""),
     ]
     return products;
+    // return this.httpClient.get<any>(this.dataUrl+"product",data);
   }
   public getProductsWinter(){
     let products: Product[];
