@@ -2,6 +2,7 @@ import { Product } from './../product';
 import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { identifierName } from '@angular/compiler';
 
 @Component({
   selector: 'app-cart',
@@ -14,13 +15,14 @@ export class CartComponent implements OnInit {
 
   totalCoin: number = 0;
   getItemInCart(){
-    this.cartService.getItems().subscribe({
+    this.cartService.getAllItemsInCart().subscribe({
       next:(res) =>{
         this.dataSource = res;
         // Tính tổng tiền giỏ hàng bằng (số lượng từng sản phẩm * đơn giá)  ==> total
         this.totalCoin = this.dataSource.reduce((total:number, dataSource:any)=>{
-          return total+ (dataSource.price * dataSource.quality);
+          return total+ (dataSource.price * dataSource.quanlity);
         },0);
+        console.log(this.totalCoin);
       },
       error:(err)=>{
         console.log("Co loi khi goi api get data"+err);
@@ -42,6 +44,37 @@ export class CartComponent implements OnInit {
     });
     // end form
     this.getItemInCart();
+  }
+
+  /**
+   * Hàm tăng giảm số lượng
+   * Author: DT An
+   * 14/12/22
+   */
+  countAdd(id: number){
+    let currentProduct = this.dataSource.find((x: { id: number; }) => x.id === id);
+    currentProduct.quanlity++;
+    this.cartService.updateAProduct(currentProduct, currentProduct.id).subscribe(()=>{
+      this.getItemInCart(); // cap nhat lai total
+    });
+  }
+  countSub(id: number){
+    let currentProduct = this.dataSource.find((x: { id: number; }) => x.id === id);
+    currentProduct.quanlity--
+    this.cartService.updateAProduct(currentProduct, currentProduct.id).subscribe(()=>{
+      this.getItemInCart(); // cap nhat lai total
+    });
+  }
+  /**
+   * Hàm xóa sản phẩm current
+   * Author: DT An
+   * 14/12/22
+   */
+  deleteAProduct(id: number){
+    let currentProduct = this.dataSource.find((x: { id: number; }) => x.id === id);
+    this.cartService.deleteAProduct(currentProduct.id).subscribe(()=>{
+      this.getItemInCart(); // cap nhat lai gio hang
+    });
   }
   /**
    * Khi click thanh toán sẽ xử lí

@@ -78,10 +78,9 @@
       <div class="oder__title title">Giỏ hàng</div>
       <div class="cart--items">
         <div class="cart--item" *ngFor="let item of dataSource">
-          <span class="cart--item__remove">✕</span>
+          <span class="cart--item__remove" (click)="deleteAProduct(item.id)">✕</span>
           <div class="cart--item__img">
-            <!-- <img src="{{item.imgUrl[1]}}" alt="Áo thun Marvel Oversize Black Panther - Outline"> -->
-            <img src="/src/assets/images/winter-sp8-trang-hinh2.jpg">
+            <img src="{{item.imgUrl[0]}}" alt="Áo thun Marvel Oversize Black Panther - Outline">
             <span class="cart--item__count">1</span>
           </div>
           <div class="cart--item__details">
@@ -102,11 +101,11 @@
               <label class="option optsize">v</label>
               <div class="action--bottom">
                 <div class="action--count">
-                  <a style="cursor: pointer;" class="quantity__reduce">-</a>
-                  <input type="number" value="1" max="99" min="1" class="quantity__control">
-                  <a style="cursor: pointer;" class="quantity__augure">+</a>
+                  <a style="cursor: pointer;" class="quantity__reduce" (click)="countSub(item.id)">-</a>
+                  <input type="number" value="{{item.quanlity}}" max="99" min="1" class="quantity__control" [(ngModel)]="item.quanlity">
+                  <a style="cursor: pointer;" class="quantity__augure" (click)="countAdd(item.id)">+</a>
                 </div>
-                <div class="action--price">{{item.price | formatMoneyVnd}}</div>
+                <div class="action--price">{{item.price*item.quanlity | formatMoneyVnd}}</div>
               </div>
             </div>
           </div>

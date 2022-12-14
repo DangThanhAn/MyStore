@@ -10,16 +10,16 @@
     <div class="product--single__wrapper" *ngIf="product">
       <div class="product--single__images" *ngIf="isChecked">
         <div class="product--img">
-          <img src="{{this.imgCurrent || product.imgUrl}}" alt="Ảnh">
+          <img src="{{this.imgCurrent || product.imgUrl[0]}}" alt="Ảnh">
         </div>
         <div class="product--option">
           <div class="product--option__item" [ngClass]="{'is-current': isCurrent}"
-            (click)="this.imgCurrent=this.product?.imgUrl.toString(); isCurrent = true;isCurrent1 = false">
-            <img src="{{product.imgUrl}}" alt="Ảnh">
+            (click)="this.imgCurrent=this.product?.imgUrl[0].toString(); isCurrent = true;isCurrent1 = false">
+            <img src="{{product.imgUrl[0]}}" alt="Ảnh">
           </div>
           <div class="product--option__item" [ngClass]="{'is-current': isCurrent1}"
-            (click)="this.imgCurrent=this.product?.imgHover.toString();isCurrent = false;isCurrent1 = true">
-            <img src="{{product.imgHover}}" alt="Áo thun Marvel">
+            (click)="this.imgCurrent=this.product?.imgUrl[1].toString();isCurrent = false;isCurrent1 = true">
+            <img src="{{product.imgUrl[1]}}" alt="Áo thun Marvel">
           </div>
         </div>
         <span class="previous"></span>
@@ -27,27 +27,23 @@
       </div>
       <div class="product--single__images" *ngIf="isChecked1">
         <div class="product--img">
-          <img
-            src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-black-panther-warrior-king222.jpg"
-            alt="Ảnh">
+          <img src="{{this.imgCurrent || product.imgUrl[2]}}" alt="Ảnh">
         </div>
         <div class="product--option">
-          <div class="product--option__item is-current">
-            <img
-              src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-black-panther-warrior-king222.jpg"
-              alt="Ảnh">
+          <div class="product--option__item" [ngClass]="{'is-current': isCurrent}"
+            (click)="this.imgCurrent=this.product?.imgUrl[2].toString(); isCurrent = true;isCurrent1 = false">
+            <img src="{{product.imgUrl[2]}}" alt="Ảnh">
           </div>
-          <div class="product--option__item ">
-            <img
-              src="https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-Marvel-Oversize-Graffiti-Warrior-King-1_22_50.jpg"
-              alt="Áo thun Marvel">
+          <div class="product--option__item" [ngClass]="{'is-current': isCurrent1}"
+            (click)="this.imgCurrent=this.product?.imgUrl[3].toString();isCurrent = false;isCurrent1 = true">
+            <img src="{{product.imgUrl[3]}}" alt="Áo thun Marvel">
           </div>
         </div>
         <span class="previous"></span>
         <span class="next"></span>
       </div>
       <div class="product--single__details">
-        <h1 class="product--single__title">{{product.name}}</h1>
+        <h1 class="product--single__title">{{product.productName}}</h1>
         <div class="product--single__review">Chưa có đánh giá!</div>
         <div class="product--single__price">{{product.price}}đ</div>
         <div class="product--single__addToCart">

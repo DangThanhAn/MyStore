@@ -1,5 +1,5 @@
 import { ProductService } from './../product.service';
-import { Product, products } from './../product';
+import { Product } from './../product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,22 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashbroadComponent implements OnInit {
   tabIndex: number = 1;
-  productsWakanda?: Product[];
-  productsWinter?: Product[];
+  productsWakanda: Product[] = [];
+  productsWinter: Product[]  = [];
+  productsAccessory: Product[]  = [];
   constructor(private productService:ProductService) {
-    this.productsWakanda = this.productService.getProductsWakanda();
-    this.productsWinter = this.productService.getProductsWinter();
    }
   isActive:Boolean = true;
   isActive2:Boolean = false;
   isActive3:Boolean = false;
-
-  // public leads: Product[]=[];
   ngOnInit(): void {
-    // this.productService.getLeads().subscribe((data)=>{
-    //   this.leads=data;
-    //   this.loading = false;
-    // })
+    this.productService.getAllProducts().subscribe((data)=>{
+      console.log("Sản phẩm lấy từ service: ");
+      console.log(data);
+      data.forEach((element: Product) => {
+        if(element.cataloryID == "1"){
+          this.productsWakanda.push(element);
+        }
+        if(element.cataloryID == "2"){
+          this.productsWinter?.push(element);
+        }
+      });
+      // console.log(this.productsWakanda);
+      // console.log(this.productsWinter);
+
+    })
   }
   changeTab(tabIndex:number){
     if(tabIndex == 2){

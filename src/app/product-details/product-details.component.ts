@@ -1,6 +1,7 @@
+
 import { CartService } from './../cart.service';
 import { ProductService } from './../product.service';
-import { Product,products} from './../product';
+import { Product} from './../product';
 import { Component, OnInit  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,25 +12,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   product :Product|any;
-  items:Product | any;
+  products: Product[]=[];
   constructor(
     private route: ActivatedRoute,
-    private products:ProductService,
+    private productsService:ProductService,
     private router: Router,
-    private cartService: CartService
+    private cartService: CartService,
     )  {
-    this.items = this.products.getProductsWakanda(); // danh sách tìm kiếm của mình
-    if(this.isChecked) this.colorConvert="Đen"; // default là mãu đen
+    if(this.isChecked)this.colorConvert="Đen";
 
    }
 
   ngOnInit() {
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('productID'));
+    const productIDFromRoute = Number(routeParams.get('productID'));
+    this.productsService.getAllProducts().subscribe((data)=>{
+      this.products = data;
+      this.product = this.products.find(x => x.productID == productIDFromRoute);
+      this.product.colorCurrent="Đen";
+      this.product.quanlity = 1;
+    });
 
-    // Find the product that correspond with the id provided in route.
-    this.product = products.find(product => product.productID === productIdFromRoute);
   }
   size:string|undefined;
   color:string|undefined;
@@ -44,6 +48,7 @@ export class ProductDetailsComponent implements OnInit {
   isShowToast:boolean = false;
   setSize(event:any){
     this.size = event.target.value.toUpperCase();
+    this.product.sizeCurrent = this.size;
     this.result = true;
   }
   // Khi click vào thì thực hiện
@@ -59,8 +64,14 @@ export class ProductDetailsComponent implements OnInit {
       this.isChecked=false;
       this.isChecked1=true;
     }
-    if(this.isChecked) this.colorConvert="Đen";
-    if(this.isChecked1) this.colorConvert="Tím";
+    if(this.isChecked) {
+      this.colorConvert="Đen";
+      this.product.colorCurrent = this.colorConvert;
+    };
+    if(this.isChecked1){
+      this.colorConvert="Tím";
+      this.product.colorCurrent = this.colorConvert;
+    }
   }
   // Nếu chưa chọn size thì show toast message
   result:boolean|any;
@@ -78,17 +89,26 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   // Tăng giảm số lượng sản phẩm
-  count:number=1;
+  count:number= 1;
   countSub(){
     this.count--;
+    this.product.quanlity = this.count;
   }
   countAdd(){
     this.count++;
+    this.product.quanlity = this.count;
   }
   addSuccess: boolean = false;
   // Add cart
   addToCart(product: Product) {
-    this.cartService.addToCart(product);
+    this.cartService.addToCart(product).subscribe({
+      next:(res)=>{
+        console.log(res);
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
     // this.router.navigate(['/','cart']);
     this.addSuccess = true;
     // window.alert('Your product has been added to the cart!');
