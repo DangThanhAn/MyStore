@@ -215,11 +215,11 @@
   ],
   "cart": [
     {
-      "productID": 1,
-      "productName": "Áo thun Marvel Oversize Graffiti Warrior King",
+      "productID": 7,
+      "productName": "Áo nỉ oversize Youth Culture - màu Be",
       "color": [
-        "Tím",
-        "Đen"
+        "Đen",
+        "Tím"
       ],
       "size": [
         "S",
@@ -229,19 +229,48 @@
       ],
       "sale": "Mua 2 được giảm thêm 10%",
       "imgUrl": [
-        "https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=85,format=auto/uploads/November2022/ao-thun-black-panther-warriorking1_61.jpg",
-        "https://media.coolmate.me/cdn-cgi/image/width=672,height=990,quality=80/image/November2022/ao-thun-Marvel-Oversize-Graffiti-Warrior-King-1_2_21.jpg",
-        "https://media.coolmate.me/cdn-cgi/image/quality=100/uploads/November2022/ao-thun-black-panther-warrior-king222.jpg",
-        "https://media.coolmate.me/cdn-cgi/image/quality=100/uploads/November2022/ao-thun-Marvel-Oversize-Graffiti-Warrior-King-1_22_50.jpg"
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2022/ao-ni-youth-culture.jpg",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2022/84_rising_chi-tiet-3.jpg",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/December2022/sweater-youth-culture-15.jpg",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/December2022/sweater-youth-culture-16.jpg"
       ],
       "quanlityAvailable": 100,
-      "price": 259000,
+      "price": 129000,
       "decription": "",
-      "cataloryID": "1",
+      "cataloryID": "2",
       "colorCurrent": "Đen",
-      "quanlity": 5,
+      "quanlity": 1,
       "sizeCurrent": "L",
-      "id": 1
+      "id": 2
+    },
+    {
+      "productID": 8,
+      "productName": "Áo Hoodie oversize YOUTH CULTURE",
+      "color": [
+        "Đen",
+        "Tím"
+      ],
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sale": "Mua 2 được giảm thêm 10%",
+      "imgUrl": [
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/October2022/84rising-oversize-hoodie-YOUTH-CULTURE-Truoc.png",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2022/ao-hoodie-youth-culture-11.jpg",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2022/ao-hoodie-youth-culture-12.jpg",
+        "https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/November2022/ao-hoodie-youth-culture-13.jpg"
+      ],
+      "quanlityAvailable": 100,
+      "price": 159000,
+      "decription": "",
+      "cataloryID": "2",
+      "colorCurrent": "Đen",
+      "quanlity": 1,
+      "sizeCurrent": "XL",
+      "id": 3
     }
   ]
 }
