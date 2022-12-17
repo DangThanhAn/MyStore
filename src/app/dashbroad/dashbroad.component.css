@@ -69,6 +69,8 @@
     font-size: 14px;
     line-height: 18px;
     cursor: pointer;
+  text-decoration: none;
+
 }
 .home--tap__item.is-active{
   color: #231f20;
@@ -112,9 +114,12 @@
   background-repeat: no-repeat;
   cursor: pointer;
 }
+.home--tap--wrapper .previous{
+  left: -80px;
+}
 .home--tap--wrapper .next{
   transform: rotate(0deg);
-  right: 0;
+  right: -80px;
 }
 .container--foryou{
     padding-left: 64px;

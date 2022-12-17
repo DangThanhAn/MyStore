@@ -71,6 +71,7 @@
         <button class="btn btn-success" type="submit">Thanh toán</button>
       </form>
     </div>
+    <!-- <app-button contentButton="Tìm hiểu thêm"></app-button> -->
   </div>
   <!-- End nội dung trang bên phải -->
   <div class="content--right">
@@ -81,7 +82,7 @@
           <span class="cart--item__remove" (click)="deleteAProduct(item.id)">✕</span>
           <div class="cart--item__img">
             <img src="{{item.imgUrl[0]}}" alt="Áo thun Marvel Oversize Black Panther - Outline">
-            <span class="cart--item__count">1</span>
+            <span class="cart--item__count">{{item.quanlity}}</span>
           </div>
           <div class="cart--item__details">
             <div class="cart--item__info">
@@ -138,7 +139,6 @@
           <p style="font-size: 18px;">{{this.totalCoin | formatMoneyVnd}}</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>

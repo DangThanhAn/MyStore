@@ -11,5 +11,15 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isShow:boolean=true;
+  isHide:boolean=false;
+  clickMenuFunc(){
+    this.isShow = false;
+    this.isHide = true;
+  }
+  closeMenu(){
+    this.isShow = true;
+    this.isHide = false;
 
+  }
 }
