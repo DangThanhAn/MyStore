@@ -13,5 +13,9 @@ export class ButtonComponent implements OnInit {
   }
   @Input() contentButton!:string
   @Input() typeButton!:string
+  @Input() type!:string
+  @Input() backgroundColor:string|any
+  @Input() colorText:string|any
+  @Input() border:string|any
 
 }

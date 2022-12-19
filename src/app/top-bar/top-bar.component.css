@@ -61,6 +61,7 @@ a{
   justify-content: space-around;
   width: 100px;
   height: 20px;
+  cursor:pointer;
 }
 /* css phần menu khi hover vào sản phẩm */
 .sub-menu{

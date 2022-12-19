@@ -5,15 +5,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path : '',
-    component: DashbroadComponent
-},
-{
-  path : 'cart',
-  component: CartComponent
-},
- { path: 'product-details/:productID', component: ProductDetailsComponent },
+  {path : '',component: DashbroadComponent},
+  {path : 'dashbroad/login',component: DashbroadComponent},
+  {path : 'cart', component: CartComponent},
+  {path: 'product-details/:productID', component: ProductDetailsComponent },
+
 ];
 
 @NgModule({

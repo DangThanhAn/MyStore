@@ -1,4 +1,6 @@
 <div class="grid--column" [ngStyle]="{'width': widthExp}">
-  <input  type="text" class="input" [placeholder]="contentPlacehoder"
+  <label for="name" *ngIf="contentLabel">{{contentLabel}}</label>
+  <input  type="text"
+  [placeholder]="contentPlacehoder||emptyPlacehoder"
   >
 </div>

@@ -20,6 +20,9 @@ import { NoComponent } from './no/no.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ToastMessageComponent } from './toast-message/toast-message.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './Login, Register, Forgot Password/login/login.component';
+import { RegisterComponent } from './Login, Register, Forgot Password/register/register.component';
+import { FogotPasswordComponent } from './Login, Register, Forgot Password/fogot-password/fogot-password.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { HttpClientModule } from '@angular/common/http';
     NoComponent,
     ProductDetailsComponent,
     ToastMessageComponent,
-    MoneyVndPipe
+    MoneyVndPipe,
+    LoginComponent,
+    RegisterComponent,
+    FogotPasswordComponent
 
   ],
   imports: [

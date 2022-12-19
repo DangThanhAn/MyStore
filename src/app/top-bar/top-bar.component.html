@@ -153,14 +153,18 @@
           </ul>
         </div>
         <div class="header--actions">
-          <img src="https://www.coolmate.me/images/header/icon-search.svg" alt="Icon Search">
-          <img src="https://www.coolmate.me/images/header/icon-account.svg" alt="Icon Account">
+          <img src="https://www.coolmate.me/images/header/icon-search.svg" alt="Icon Search"  (click)="clickedSearch()">
+          <img src="https://www.coolmate.me/images/header/icon-account.svg" alt="Icon Account" (click)="clickedUser()">
           <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><img
               src="https://www.coolmate.me/images/header/icon-cart.svg" alt="Icon mini cart"></a>
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <!-- Responsive MOBILE -->
   <div class="nav--mobile">
     <div class="nav--overlay"></div>
     <div class="navbar--mobile">
@@ -200,14 +204,22 @@
           <a href="/"><img src="https://www.coolmate.me/images/logo-coolmate.svg" alt="Logo Coolmate"></a>
         </div>
         <div class="header--actions">
-          <img src="https://www.coolmate.me/images/header/icon-search.svg" alt="Icon Search">
-
-          <img src="https://www.coolmate.me/images/header/icon-account.svg" alt="Icon Account">
-          <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><img
-              src="https://www.coolmate.me/images/header/icon-cart.svg" alt="Icon mini cart"></a>
+          <img src="https://www.coolmate.me/images/header/icon-search.svg" alt="Icon Search"  (click)="clickedSearch()">
+          <img src="https://www.coolmate.me/images/header/icon-account.svg" alt="Icon Account" (click)="clickedUser()">
+          <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><img src="https://www.coolmate.me/images/header/icon-cart.svg" alt="Icon mini cart"></a>
         </div>
       </div>
     </div>
   </div>
-
 </div>
+<app-login
+(returnDefaultVal)="returnVal()"
+(showRegister)="showPopupRegister()"
+(showForgotPassword)="showPopupForgotPassword()"
+ *ngIf="showLogin"></app-login>
+<app-fogot-password (returnDefaultVal)="returnVal()" *ngIf="showForgotPassword"></app-fogot-password>
+<app-register
+(returnDefaultVal)="returnVal()"
+(showFormLogin)="showPopupLogin()"
+(showForgotPassword)="showPopupForgotPassword()"
+ *ngIf="showRegister"></app-register>

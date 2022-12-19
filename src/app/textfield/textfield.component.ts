@@ -8,11 +8,13 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./textfield.component.css']
 })
 export class TextfieldComponent implements OnInit {
-
   constructor() { }
   @Input() widthExp : string | undefined;
   @Input() contentPlacehoder : string | any;
+  @Input()contentLabel:string|any;
+
   ngOnInit(): void {
 
   }
+  emptyPlacehoder = "";
 }
