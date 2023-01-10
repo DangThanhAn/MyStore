@@ -1,5 +1,5 @@
-import { Product } from './../product';
-import { CartService } from './../cart.service';
+import { Product } from '../../model/product';
+import { CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { identifierName } from '@angular/compiler';

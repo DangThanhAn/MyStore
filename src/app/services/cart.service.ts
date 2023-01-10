@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-import { Product } from './product';
+import { Product } from '../model/product';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -28,7 +28,7 @@ export class CartService {
     return this.http.get<any>(this.url);
   }
 
-  clearCart() {
+  public clearCart() {
     return this.http.delete(this.url);
   }
 }

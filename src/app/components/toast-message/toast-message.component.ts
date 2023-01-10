@@ -1,4 +1,4 @@
-import { Product } from './../product';
+import { Product } from '../../model/product';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatButton } from '@angular/material';
 
